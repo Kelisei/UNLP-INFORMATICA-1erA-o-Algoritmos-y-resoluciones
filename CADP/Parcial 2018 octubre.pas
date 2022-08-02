@@ -33,3 +33,14 @@ begin
 	//CargarVectorLetras (V, dimL);
 	Contar (V, dimL);
 end;
+//Calculo de tiempo
+//2--> asignaciones.
+//while (n+1).(condicion)+n.(cuerpo)-----> (n+1)+n(1+1+ (n+1).(3)+n.(2)+2) 
+//n+1+n(2+3n+3+2n+2)
+//n+1+n(7+5n)
+//n+1+7n+5n^2 
+//5n^2 +8n+1
+//5n^2 +8n+3
+//3.n+2--->for 
+//5n^2 +11n+5
+
