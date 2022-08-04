@@ -39,21 +39,26 @@ begin
 		readln (N.codigoProducto);
 	end;
 end;
-procedure informar (L:lista);
+procedure informaryEncontrar (L:lista; var encontrado:boolean);
 var
 	codigoLeido:integer;
 begin
 	readln (codigoLeido);
-	while (L<> nil) and (codigoLeido <> L^.codigoProducto) do begin
+	while (L<> nil) and (codigoLeido > L^.codigoProducto) do begin
 		L:=L^.siguiente;
 	end;
-	writeln (L^.cantidadVendida);
+	If (L <> nil) and (L^.codigoProducto = codigoLeido) then begin
+		writeln(L^.cantidadVendida);
+		encontrado:=true
+	end
+	else
+		encontrado:=false;
 end;
 var
-	L:lista;
+	L:lista; encontrado:boolean;
 begin
 	L:=nil;
 	leerProductos(L);
-	informar (L);
+	informaryEncontrar(L,encontrado);
 end.
 
