@@ -47,7 +47,7 @@ begin
 	while (L<> nil) and (codigoLeido > L^.codigoProducto) do begin
 		L:=L^.siguiente;
 	end;
-	If (L <> nil) and (L^.codigoProducto = codigoLeido) then begin
+	while (L <> nil) and (L^.codigoProducto = codigoLeido) then begin
 		writeln(L^.cantidadVendida);
 		encontrado:=true
 	end
