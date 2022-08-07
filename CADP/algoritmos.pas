@@ -45,6 +45,24 @@ begin
     end;
     if (pos <= dimL) and (a[pos] = num) then ok:=true;
 end;
+{   
+    ELIMINAR VECTOR:
+    1- Verificar que la posición sea válida (esté entre los valores de dimensión definida del vector y la dimensión lógica).
+    2- Hacer el corrimiento a partir de la posición y hasta el final.
+    3- Decrementar la cantidad de elementos actuales.
+}
+procedure eliminarVector (var vector:numeros; dimL:integer; bus:integer; ok:boolean);
+var
+  i:integer;
+begin
+  ok:=false;
+  if (bus >= 1) and (bus <= dimL) then begin
+    for i:= bus to dimL-1 do 
+      a[i]:=a[i+1];
+    ok:=true;
+    dimL:=dimL-1;
+  end;
+end;
 {
     INSERTAR UN ELEMENTO EN UNA LISTA ORDENADA:
     • Se necesita que la estructura tenga un orden e implica agregar el elemento a la lista de manera que la misma siga ordenada.
