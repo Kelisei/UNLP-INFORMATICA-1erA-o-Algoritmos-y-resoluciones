@@ -98,6 +98,24 @@ end;
         campo siguiente del puntero auxiliar actual y se elimina con un dispose el nodo actual.
 
 }
+procedure eliminar(var PI: lista; num: integer); //Elimina 1 solo
+var
+  act, ant: lista;
+begin
+  act:= PI;
+  while((act <> nil) and (act^.num <> num)) do begin
+    ant:= act; act:= act^.sig;
+  end;
+  if(act^.num = num) then begin
+    if(act = PI) then
+      PI:= PI^.sig
+    else 
+      ant^.sig:= act^.sig;
+    dispose(actual);
+    end;
+  end;
+end;
+
 Procedure eliminar(Var l:lista; valor:Integer);
 //buscas en una lista un valor y si existe lo elimina
 Var 
