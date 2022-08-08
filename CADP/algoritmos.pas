@@ -227,4 +227,14 @@ begin
 		end;
 	end;
 end;
-
+{ AGREGAR ATRAS/FINAL }
+procedure agregarAtras {agregar al final} (var l:lista; nue:alumno; var U:lista);
+var
+	N:lista;
+begin
+	new(N); N^.dato:=nue; N^.sig:=nil;
+	if (l = nil) then
+		l:=N
+	else u^.sig:=N;
+	u:=N;
+end;
