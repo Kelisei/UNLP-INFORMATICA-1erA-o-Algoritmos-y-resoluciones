@@ -137,3 +137,22 @@ begin
 	readln (numero);
 	eliminacion (L, numero, ok);
 end.
+
+{ 	AGREGAR ATRAS/FINAL DE UNA LISTA
+	• Crear un nuevo nodo.
+	• Cargar el nuevo nodo con el dato que corresponda y la dirección siguiente ‘nil’
+	• Verificar si el nodo a agregar va a ser el primero de la lista o ya existen otros.
+	• Si va a ser el primero, asignar al puntero inicial la dirección del nuevo nodo.
+	• Si no, inicializar un puntero auxiliar para recorrer la lista hasta ubicarse en su último nodo.
+	• Actualizar como siguiente del último nodo al nuevo elemento
+}
+procedure agregarAtras {agregar al final} (var l:lista; nue:alumno; var U:lista);
+var
+	N:lista;
+begin
+	new(N); N^.dato:=nue; N^.sig:=nil;
+	if (l = nil) then
+		l:=N
+	else u^.sig:=N;
+	u:=N;
+end;
