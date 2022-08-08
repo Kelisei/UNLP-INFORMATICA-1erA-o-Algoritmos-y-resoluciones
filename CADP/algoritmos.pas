@@ -1,4 +1,5 @@
-{ ORDENAR VECTOR
+{	
+    ORDENAR VECTOR
     Es un algoritmo de dimL pasadas.
     Para cada pasada i
     Se elige el mínimo en el vector a partir de la
@@ -24,7 +25,7 @@ begin
   end;
  end;
 {
-    INSETAR VECTOR:
+    INSERTAR VECTOR:
     1- Verificar si hay espacio (cantidad de elementos actuales es menor a la cantidad de 
     elementos posibles)
     2- Verificar que la posición sea válida (esté entre los valores de dimensión definida del vector y la dimensión lógica).
