@@ -1,3 +1,29 @@
+{ ORDENAR VECTOR
+    Es un algoritmo de dimL pasadas.
+    Para cada pasada i
+    Se elige el mínimo en el vector a partir de la
+    posición (i+1) hasta el final
+    Si el mínimo de vector es más chico que lo que
+    está almacenado en la posición i del vector se
+    intercambia
+}
+Procedure Ordenar ( var v: numeros; dimLog: integer);
+var 
+  i, j, p, item: integer; {declaramos 4 integers, los 2 primeros sin indices y el siguiente es posicion, e item}
+begin
+ for i:=1 to dimLog-1 do
+  begin {busca el mínimo v[p] entre v[i] , ..., v[N] }
+  p := i; {asignamos i}
+  for j := i+1 to dimLog do {avanzamos del siguiente hasta el final}
+    if v[ j ] < v[ p ] then {de ser el siguiente menor que la posicion hay que intercambiar lugares}
+  p:=j; 
+  {intercambia v[i] y v[p] }
+  item := v[ p ]; {item funciona para guardar el lugar (como un aux)}
+  v[ p ] := v[ i ];
+  v[ i ] := item;
+  end;
+ end;
+
 {
     BUSQUEDA DICOTOMICA:
     1- Se calcula el elemento que esta en la posición del medio
