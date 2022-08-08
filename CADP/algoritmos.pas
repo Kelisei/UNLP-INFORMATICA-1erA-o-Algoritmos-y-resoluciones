@@ -23,6 +23,31 @@ begin
   v[ i ] := item;
   end;
  end;
+{
+    INSETAR VECTOR:
+    1- Verificar si hay espacio (cantidad de elementos actuales es menor a la cantidad de 
+    elementos posibles)
+    2- Verificar que la posición sea válida (esté entre los valores de dimensión definida del vector y la dimensión lógica).
+    3- Hacer lugar para poder insertar el elemento.
+    4- Incrementar la cantidad de elementos actuales.
+}
+Procedure agregar (var a :números; var dL:integer; var pude:boolean;  
+                   valor:integer; pos:integer);
+Var
+ i:integer;
+Begin
+  pude:= false; 
+  if ((dL + 1) <= física) and (pos>= 1) and (pos <= dL) )then begin 
+  {Si la dimL es menor que la fisica, la posicion agregar es mayor que uno y la posicion no se 
+  pasa de la dimL entonces:}
+   for i:= dL down to pos do  {movemos los objetos del vector desde el nuevo lugar 
+   hasta el lugar a insertar}
+        a[i+1]:= a[i];  
+   pude:= true; {confirmamos que pudimos}
+   a[pos]:= valor; {le asignamos al lugar el valor}
+   dL:= dL + 1; {aumentamos dimL (se puede hacer antes y en el for habria que hacer a[i]:=a[i-1])}
+  end;
+end;
 
 {
     BUSQUEDA DICOTOMICA:
