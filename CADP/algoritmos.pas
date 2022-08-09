@@ -32,24 +32,18 @@ begin
     3- Hacer lugar para poder insertar el elemento.
     4- Incrementar la cantidad de elementos actuales.
 }
-Procedure agregar (var a :números; var dL:integer; var pude:boolean;  
-                   valor:integer; pos:integer);
-Var
- i:integer;
-Begin
-  pude:= false; 
-  if ((dL + 1) <= física) and (pos>= 1) and (pos <= dL) )then begin 
-  {Si la dimL es menor que la fisica, la posicion agregar es mayor que uno y la posicion no se 
-  pasa de la dimL entonces:}
-   for i:= dL down to pos do  {movemos los objetos del vector desde el nuevo lugar 
-   hasta el lugar a insertar}
-        a[i+1]:= a[i];  
-   pude:= true; {confirmamos que pudimos}
-   a[pos]:= valor; {le asignamos al lugar el valor}
-   dL:= dL + 1; {aumentamos dimL (se puede hacer antes y en el for habria que hacer a[i]:=a[i-1])}
-  end;
+procedure insertarVector (var v:vector; var ok:boolean; var dimf:integer; valor, diml, pos:integer);
+var
+    i:integer;
+begin
+    ok:=false;
+    if (diml + 1 < dimf) and (pos > 1) and (pos < diml) then begin
+        for i:= diml downto pos do
+            v[i+1]:=v[i];
+        ok:=true;
+        diml:=diml+1;
+    end;
 end;
-
 {
     BUSQUEDA DICOTOMICA:
     1- Se calcula el elemento que esta en la posición del medio
@@ -87,7 +81,7 @@ var
     pos:integer;
 begin
     pos:=1;
-    while (pos <= dimL) and (a[pos] < bus) do begin {Mientras este ordenado menor va seguir moviendose, 
+    while (pos <= dimL) and (vector[pos] < bus) do begin {Mientras este ordenado menor va seguir moviendose, 
     esto sirve para cuando es de menor a mayor, ya que por ejemplo nos dan 
     el 8, y hay 3, 6, 7, 9: el 3 es menor entonces se mueve, el 6 tambien, etc, hasta llegar al 9}
     {para cuando es de mayor a menor:
@@ -95,7 +89,7 @@ begin
     ya que nos dan 9, 7, 6, 3 y hay que buscar el 6, el 9 es mayor, entonces se mueve, etc}
       pos:=pos+1;
     end;
-    if (pos <= dimL) and (a[pos] = num) then ok:=true;
+    if (pos <= dimL) and (vector[pos] = bus) then ok:=true;
 end;
 {   
     ELIMINAR VECTOR:
