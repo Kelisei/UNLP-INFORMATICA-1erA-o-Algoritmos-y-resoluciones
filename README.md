@@ -194,21 +194,20 @@ end;
 ```
 Informar Rango
 ===========
-```
-pascal
-procedure entreLegRec(A: arbol; legajo1: integer; legajo2: integer);
+```pascal
+procedure informarRango(A: arbol; legajo1: integer; legajo2: integer);
 begin
   if(A <> nil) then begin
     if(A^.dato.legajo > legajo2) then
-      entreLegRec(A^.HI, legajo1, legajo2)
+      informarRango(A^.HI, legajo1, legajo2)
     else
       if(A^.dato.legajo >= legajo1) then begin
         write(a^.dato.legajo,'|');
-        entreLegRec(A^.HD, legajo1, legajo2);
-        entreLegRec(A^.HI, legajo1, legajo2);
+        informarRango(A^.HD, legajo1, legajo2);
+        informarRango(A^.HI, legajo1, legajo2);
       end
       else
-        entreLegRec(A^.HD, legajo1, legajo2);
+        informarRango(A^.HD, legajo1, legajo2);
   end;
 end;
 ```
