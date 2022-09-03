@@ -8,12 +8,13 @@ Este es un repositorio donde pienso guardar todos los algoritmos realizados dura
 * [Inserción](#Inserción)
 * [Informar Simple](#Informar-Simple)
 * [Función Maximo/Minimo Ordenado](#Función-Máximo-Mínimo)
-* [Procedure Maximo/Minimo](#Procedure-Máximo-Mínimo)
+* [Procedure Máximo/Mínimo](#Procedure-Máximo-Mínimo)
 * [Encontrar Ordenado](#Encontrar-Ordenado)
 * [Encontrar](#Encontrar)
 * [Informar Acumulando](#Informar-Acumulando)
 * [Informar Uno](#Informar-Uno)
 * [Informar Inferior](#Informar-Inferior)
+* [Informar Rango](#Informar-Rango)
 
 Declaración
 ===========
@@ -188,6 +189,26 @@ begin
       else
         entreLegRec(A^.HD, legajo1, legajo2); 
         {Si queremos informar al reves, deberiamos invertir los signos!}
+  end;
+end;
+```
+Informar Rango
+===========
+```
+pascal
+procedure entreLegRec(A: arbol; legajo1: integer; legajo2: integer);
+begin
+  if(A <> nil) then begin
+    if(A^.dato.legajo > legajo2) then
+      entreLegRec(A^.HI, legajo1, legajo2)
+    else
+      if(A^.dato.legajo >= legajo1) then begin
+        write(a^.dato.legajo,'|');
+        entreLegRec(A^.HD, legajo1, legajo2);
+        entreLegRec(A^.HI, legajo1, legajo2);
+      end
+      else
+        entreLegRec(A^.HD, legajo1, legajo2);
   end;
 end;
 ```
