@@ -5,7 +5,8 @@ Este es un repositorio donde pienso guardar todos los algoritmos realizados dura
 1. Arboles (BST)
 * [Declaración](#Declaración)
 * [Inserción](#Inserción)
-* [Función Maximo/Minimo](#Función-Maximo-Minimo)
+* [Función Maximo/Minimo](#Función-Máximo-Mínimo)
+* [Procedure Maximo/Minimo](#Procedure-Máximo-Mínimo)
 
 Declaración
 ===========
@@ -33,7 +34,7 @@ Begin
     else crear(A^.HD,n)   
 End;
 ```
-Función Maximo Minimo
+Función Máximo Mínimo
 ===========
 ```pascal
 {Cuando el arbol esta ordenado en base a lo que queremos sacar}
@@ -46,14 +47,18 @@ Función Maximo Minimo
 		else conseguirMaximo:=conseguirMaximo(a^.hd);
 	end;
 ```
-Declaración
+Procedure Máximo Mínimo
 ===========
 ```pascal
-type
-	arbol = ^nodo;
-	nodo = record
-		dato:integer;
-		hi:arbol;
-		hd:arbol;
-	end;
+	procedure buscarMasEdad(a:arbol; var maxE:integer; var maxN:integer);
+	begin
+	   if ( a <> nil ) then begin
+		writeln(a^.dato.numero);
+		if (a^.dato.edad > maxE) then begin
+			maxE:=a^.dato.edad;
+			maxN:=a^.dato.numero;
+		end;
+		buscarMasEdad (a^.hi, maxE, maxN);
+		buscarMasEdad (a^.hd, maxE, maxN);
+   end;
 ```
