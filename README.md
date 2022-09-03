@@ -5,9 +5,9 @@ Este es un repositorio donde pienso guardar todos los algoritmos realizados dura
 1. Arboles (BST)
 * [Declaración](#Declaración)
 * [Inserción](#Inserción)
-* [Función Maximo/Minimo](#Función-Máximo-Mínimo)
+* [Función Maximo/Minimo Ordenado](#Función-Máximo-Mínimo)
 * [Procedure Maximo/Minimo](#Procedure-Máximo-Mínimo)
-* [Encontrar](#Encontrar)
+* [Encontrar Ordenado](#Encontrar-Ordenado)
 
 Declaración
 ===========
@@ -64,11 +64,10 @@ Procedure Máximo Mínimo
 		buscarMasEdad (a^.hd, maxE, maxN);
    end;
 ```
-Encontrar
+Encontrar Ordenado
 ===========
 ```pascal
-{Cuando buscamos elementos no ordenados en el arbol}
-procedure encontrar (a:arbol);
+procedure bv (a:arbol);
 var
 	valor:Integer;
 	function encontrar (a:arbol; v:integer):boolean;
@@ -79,4 +78,29 @@ var
 		else if (a^.dato.numero < v) then encontrar:=encontrar(a^.hd, v)
 		else encontrar:=encontrar(a^.hi, v);
 	end;
+begin
+	readln (valor);
+	if (encontrar(a,valor)) then 
+		writeln('encontrao numero')
+	else writeln ('no ta numero');
+end;
+```
+Encontrar
+===========
+```pascal
+procedure bvi (a:arbol);
+var
+	valor:string;
+	function encontrar (a:arbol; nom:string):boolean;
+	begin
+		if (a = nil) then
+			encontrar:=false
+		else encontrar:=(a^.dato.nombre = nom) or encontrar(a^.hi, nom) or encontrar(a^.hd, nom);
+	end;
+begin
+	readln (valor);
+	if (encontrar(a,valor)) then 
+		writeln('encontrao nombre')
+	else writeln ('no ta nombre');
+end;
 ```
