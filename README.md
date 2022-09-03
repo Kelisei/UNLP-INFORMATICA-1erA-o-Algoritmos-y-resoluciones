@@ -12,7 +12,7 @@ Este es un repositorio donde pienso guardar todos los algoritmos realizados dura
 * [Encontrar](#Encontrar)
 * [Informar Acumulando](#Informar-Acumulando)
 * [Informar Uno](#Informar-Uno)
-
+* [Informar Inferior](#Informar-Inferior)
 Declaración
 ===========
 ```pascal
@@ -149,7 +149,6 @@ Informar Uno
 procedure c (var a:arbol2);
 var
 	num:integer;
-//-------------
 	function total (a:arbol2; num:integer):integer;
 	begin
 		if (a = nil) then
@@ -168,5 +167,24 @@ begin
 	writeln('Diga un numero de producto!');
 	readln(num);
 	writeln(total(a,num));
+end;
+```
+Informar Inferior 
+```pascal
+procedure entreLegRec(A: arbol; legajo1: integer; legajo2: integer);
+begin
+  if(A <> nil) then begin
+    if(A^.dato.legajo > legajo2) then
+      entreLegRec(A^.HI, legajo1, legajo2)
+    else
+      if(A^.dato.legajo >= legajo1) then begin
+        write(a^.dato.legajo,'|');
+        entreLegRec(A^.HD, legajo1, legajo2);
+        entreLegRec(A^.HI, legajo1, legajo2);
+      end
+      else
+        entreLegRec(A^.HD, legajo1, legajo2); 
+        {Si }
+  end;
 end;
 ```
