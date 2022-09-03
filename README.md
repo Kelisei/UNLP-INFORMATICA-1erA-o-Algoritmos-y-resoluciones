@@ -1,4 +1,5 @@
-# 🖥️Algoritmos Utiles🖥️:
+<h1 align="center">🖥️Algoritmos Utiles🖥️</h1>
+
 Este es un repositorio donde pienso guardar todos los algoritmos realizados durante el la carrera, por ahora solo de taller en adelante.
 
 Si ves algún error o tenes alguna duda o sabes como hacer una función que encuentre el máximo de un dato por el que el arbol no esta ordenado mensajeame a:
@@ -22,7 +23,7 @@ Si ves algún error o tenes alguna duda o sabes como hacer una función que encu
 2. Vectores/Arrays 📰
 * [Ordenación por inserción](#Ordenación-por-inserción)
 * [Ordenación por selección](#Ordenación-por-selección)
-* [Insertar](#Inserción)
+* [Insertar Vector](#Insertar-Vector)
 * [Dicotómica](#Busqueda-Binaria)
 
 <h1 align="center">🌲Arboles🌲</h1>
@@ -260,7 +261,7 @@ begin
       end;
 end;
 ```
-Inserción
+Insertar Vector
 ===========
 ```pascal
 procedure insertarVector (var v:vector; var ok:boolean; var dimf:integer; valor, diml, pos:integer);
