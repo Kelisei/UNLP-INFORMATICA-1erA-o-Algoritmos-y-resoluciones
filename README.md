@@ -5,9 +5,11 @@ Este es un repositorio donde pienso guardar todos los algoritmos realizados dura
 1. Arboles (BST)
 * [Declaración](#Declaración)
 * [Inserción](#Inserción)
+* [Informar](#Informar)
 * [Función Maximo/Minimo Ordenado](#Función-Máximo-Mínimo)
 * [Procedure Maximo/Minimo](#Procedure-Máximo-Mínimo)
 * [Encontrar Ordenado](#Encontrar-Ordenado)
+* [Encontrar](#Encontrar)
 
 Declaración
 ===========
@@ -34,6 +36,18 @@ Begin
     if (n.numero < A^.dato.numero) then crear(A^.HI,n)
     else crear(A^.HD,n)   
 End;
+```
+Informar
+===========
+```pascal
+Procedure x ( a : arbol );
+begin
+   if ( a<> nil ) then begin
+    x (a^.hi);
+	writeln ('Numero de socio:',a^.dato.numero);
+    x (a^.hd);
+   end;
+end;
 ```
 Función Máximo Mínimo
 ===========
