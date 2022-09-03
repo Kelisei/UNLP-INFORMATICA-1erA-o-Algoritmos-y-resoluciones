@@ -33,7 +33,7 @@ Begin
     else crear(A^.HD,n)   
 End;
 ```
-Función-Maximo-Minimo
+Función Maximo Minimo
 ===========
 ```pascal
 {Cuando el arbol esta ordenado en base a lo que queremos sacar}
