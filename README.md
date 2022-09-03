@@ -2,7 +2,7 @@
 Este es un repositorio donde pienso guardar todos los algoritmos realizados durante el la carrera, por ahora solo de taller en adelante.
 **Indice:** 
 
-1. Arboles
+1. Arboles (BST)
 * [Declaración](#Declaración)
 * [Inserción](#Inserción)
 * [Función Maximo/Minimo](#Función-Maximo/Minimo-(Ordenado))
@@ -33,7 +33,7 @@ Begin
     else crear(A^.HD,n)   
 End;
 ```
-Función_Maximo/Minimo (Ordenado)
+Función Maximo/Minimo (Ordenado)
 ===========
 ```pascal
 	function conseguirMaximo(a:arbol):integer;
