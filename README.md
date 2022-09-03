@@ -5,7 +5,7 @@ Este es un repositorio donde pienso guardar todos los algoritmos realizados dura
 1. Arboles
 * [Declaración](#Declaración)
 * [Inserción](#Inserción)
-* [Función Maximo/Minimo](#Función_Maximo/Minimo (Ordenado))
+* [Función Maximo/Minimo](#Función-Maximo/Minimo-(Ordenado))
 
 Declaración
 ===========
