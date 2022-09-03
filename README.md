@@ -5,11 +5,13 @@ Este es un repositorio donde pienso guardar todos los algoritmos realizados dura
 1. Arboles (BST)
 * [Declaración](#Declaración)
 * [Inserción](#Inserción)
-* [Informar](#Informar)
+* [Informar Simple](#Informar-Simple)
 * [Función Maximo/Minimo Ordenado](#Función-Máximo-Mínimo)
 * [Procedure Maximo/Minimo](#Procedure-Máximo-Mínimo)
 * [Encontrar Ordenado](#Encontrar-Ordenado)
 * [Encontrar](#Encontrar)
+* [Informar Acumulando](#Informar-Acumulando)
+* [Informar Uno](#Informar-Uno)
 
 Declaración
 ===========
@@ -37,7 +39,7 @@ Begin
     else crear(A^.HD,n)   
 End;
 ```
-Informar
+Informar Simple
 ===========
 ```pascal
 Procedure x ( a : arbol );
@@ -116,5 +118,55 @@ begin
 	if (encontrar(a,valor)) then 
 		writeln('encontrao nombre')
 	else writeln ('no ta nombre');
+end;
+```
+Informar Acumulando
+===========
+```pascal
+procedure b (var a:arbol; var cantv1:integer);
+var
+	num:integer; 
+	function total (a:arbol; num:integer):integer;
+	begin
+		if (a = nil) then
+			total:=0
+		else if (a^.dato.codigo = num) then
+			total:= a^.dato.cantidad+total(a^.hd, num)
+		else if (num < a^.dato.codigo) then 
+			total:=total(a^.hi, num) 
+		else total:=total(a^.hd, num);
+	end;
+begin
+	readln(num);
+	cantv1:=total(a,num);
+	writeln('Diga un numero de producto!');
+	writeln('Las ventas de ',num,' son de ',cantv1);
+end;
+```
+Informar Uno
+===========
+```pascal
+procedure c (var a:arbol2);
+var
+	num:integer;
+//-------------
+	function total (a:arbol2; num:integer):integer;
+	begin
+		if (a = nil) then
+			total:=0
+		else begin 
+			if (a^.dato.codigo = num) then
+				total:=a^.dato.cantidad
+			else begin
+				if (num < a^.dato.codigo) then 
+					total:= total(a^.hi, num) 	
+				else total:= total(a^.hd, num);
+			end;
+		end;
+	end;
+begin
+	writeln('Diga un numero de producto!');
+	readln(num);
+	writeln(total(a,num));
 end;
 ```
