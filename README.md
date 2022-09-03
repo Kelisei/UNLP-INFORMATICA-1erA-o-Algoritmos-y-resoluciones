@@ -19,6 +19,11 @@ Si ves algún error o tenes alguna duda o sabes como hacer una función que encu
 * [Informar Uno](#Informar-Uno)
 * [Informar Inferior](#Informar-Inferior)
 * [Informar Rango](#Informar-Rango)
+2. Vectores/Arrays 📰
+* [Ordenación por inserción](#Ordenación-por-inserción)
+* [Ordenación por selección](#Ordenación-por-selección)
+* [Insertar](#Inserción)
+* [Dicotómica](#Busqueda-Binaria)
 
 <h1 align="center">🌲Arboles🌲</h1>
 
@@ -214,6 +219,99 @@ begin
       end
       else
         informarRango(A^.HD, legajo1, legajo2);
+  end;
+end;
+```
+<h1 align="center">📰Vectores/Arrays📰</h1>
+
+Ordenación por Inserción 
+===========
+```pascal
+Procedure Ordenar ( var v: tVector; dimLog: indice );
+var i, j: indice; actual: tipoElem;		
+begin
+ for i:=2 to dimLog do begin 
+     actual:= v[i];
+     j:= i-1; 
+     while (j > 0) y (v[j] > actual) do      
+       begin
+         v[j+1]:= v[j];
+         j:= j – 1;                  
+       end;  
+     v[j+1]:= actual; 
+ end;
+end;
+```
+Ordenación por Selección
+===========
+```pascal
+Procedure Ordenar ( var v: tVector; dimLog: indice );
+var i, j, p: indice; item : tipoElem;		
+begin
+ for i:=1 to dimLog-1 do begin {busca el mínimo y guarda en p la posición}
+          p := i;
+          for j := i+1 to dimLog do
+             if v[ j ] < v[ p ] then p:=j;
+
+         {intercambia v[i] y v[p]}
+         item := v[ p ];   
+         v[ p ] := v[ i ];   
+         v[ i ] := item;
+      end;
+end;
+```
+Inserción
+===========
+```pascal
+procedure insertarVector (var v:vector; var ok:boolean; var dimf:integer; valor, diml, pos:integer);
+var
+    i:integer;
+begin
+    ok:=false;
+    if (diml + 1 < dimf) and (pos > 1) and (pos < diml) then begin
+        for i:= diml downto pos do
+            v[i+1]:=v[i];
+        ok:=true;
+        diml:=diml+1;
+    end;
+end;
+```
+Inserción
+===========
+```pascal
+procedure insertarVector (var v:vector; var ok:boolean; var dimf:integer; valor, diml, pos:integer);
+var
+    i:integer;
+begin
+    ok:=false;
+    if (diml + 1 < dimf) and (pos > 1) and (pos < diml) then begin
+        for i:= diml downto pos do
+            v[i+1]:=v[i];
+        ok:=true;
+        diml:=diml+1;
+    end;
+end;
+```
+Busqueda binaria
+===========
+```pascal
+procedure busquedaDicotomica (var vector: numeros; dimL: integer; bus:integer; var ok:boolean); //Se pasa el vector como var en caso de tener que hacer algo, lol
+var 
+    pri, ult, medio: integer;
+begin
+  ok:=false; //Ok chequea si lo encontró
+  //calculamos las posiciones por primera vez
+  pri:=1;
+  ult:=dimL;
+  medio:=(pri+ult) div 2;
+  while (pri <= ult) and (bus <> vec[medio]) do //mientras no hayamos llegado al final y no hallamos encontrado el objeto 
+   begin
+        if (bus < vec[medio]) then
+            ult:=medio-1 //Si el busqueda esta del lado menor del vector entonces el ultimo tiene que pasarse alli
+        else pri:=medio+1; //Lo mismo con le primero si esta en el lado mayor
+        medio:= (pri+ult) div 2; //Reseteamos el medio
+    end;
+    if (pri <= ult) and (bus = vec[medio]) then ok:=True; //Si esta en un posicion posible, y se encontró, entonces le devolvemos verdadero
   end;
 end;
 ```
