@@ -1,6 +1,10 @@
 # Algoritmos Utiles:
 Este es un repositorio donde pienso guardar todos los algoritmos realizados durante el la carrera, por ahora solo de taller en adelante.
 
+Si ves algún error o tenes alguna duda o sabes como hacer una función que encuentre el máximo de un dato por el que el arbol no esta ordenado mensajeame a:
+.【𝓚𝓮𝓵𝓲𝓼𝓮𝓲】#6143
+
+
 **Indice:** 
 
 1. Arboles (BST)
@@ -175,19 +179,19 @@ end;
 Informar Inferior 
 ===========
 ```pascal
-procedure entreLegRec(A: arbol; legajo1: integer; legajo2: integer);
+procedure informarInferior(A: arbol; legajo1: integer; legajo2: integer);
 begin
   if(A <> nil) then begin
     if(A^.dato.legajo > legajo2) then
-      entreLegRec(A^.HI, legajo1, legajo2)
+      informarInferior(A^.HI, legajo1, legajo2)
     else
       if(A^.dato.legajo >= legajo1) then begin
         write(a^.dato.legajo,'|');
-        entreLegRec(A^.HD, legajo1, legajo2);
-        entreLegRec(A^.HI, legajo1, legajo2);
+        informarInferior(A^.HD, legajo1, legajo2);
+        informarInferior(A^.HI, legajo1, legajo2);
       end
       else
-        entreLegRec(A^.HD, legajo1, legajo2); 
+        informarInferior(A^.HD, legajo1, legajo2); 
         {Si queremos informar al reves, deberiamos invertir los signos!}
   end;
 end;
