@@ -13,6 +13,7 @@ Este es un repositorio donde pienso guardar todos los algoritmos realizados dura
 * [Informar Acumulando](#Informar-Acumulando)
 * [Informar Uno](#Informar-Uno)
 * [Informar Inferior](#Informar-Inferior)
+
 Declaración
 ===========
 ```pascal
@@ -184,7 +185,7 @@ begin
       end
       else
         entreLegRec(A^.HD, legajo1, legajo2); 
-        {Si }
+        {Si queremos informar al reves, deberiamos invertir los signos!}
   end;
 end;
 ```
