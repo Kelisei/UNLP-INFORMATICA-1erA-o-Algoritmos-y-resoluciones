@@ -20,6 +20,8 @@ Si ves algún error o tenes alguna duda o sabes como hacer una función que encu
 * [Informar Inferior](#Informar-Inferior)
 * [Informar Rango](#Informar-Rango)
 
+# Arboles:
+
 Declaración
 ===========
 ```pascal
