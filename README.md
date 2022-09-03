@@ -3,7 +3,7 @@ Este es un repositorio donde pienso guardar todos los algoritmos realizados dura
 **Indice:** 
 
 1. Arboles
-*[Declaración](#Declaración)
+* [Declaración](#Declaración)
 
 Declaración
 ===========
