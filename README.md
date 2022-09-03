@@ -1,5 +1,6 @@
 # Algoritmos Utiles:
 Este es un repositorio donde pienso guardar todos los algoritmos realizados durante el la carrera, por ahora solo de taller en adelante.
+
 **Indice:** 
 
 1. Arboles (BST)
@@ -171,6 +172,7 @@ begin
 end;
 ```
 Informar Inferior 
+===========
 ```pascal
 procedure entreLegRec(A: arbol; legajo1: integer; legajo2: integer);
 begin
