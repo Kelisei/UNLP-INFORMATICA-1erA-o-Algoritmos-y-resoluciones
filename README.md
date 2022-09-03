@@ -7,6 +7,7 @@ Este es un repositorio donde pienso guardar todos los algoritmos realizados dura
 * [Inserción](#Inserción)
 * [Función Maximo/Minimo](#Función-Máximo-Mínimo)
 * [Procedure Maximo/Minimo](#Procedure-Máximo-Mínimo)
+* [Encontrar](#Encontrar)
 
 Declaración
 ===========
@@ -50,6 +51,7 @@ Función Máximo Mínimo
 Procedure Máximo Mínimo
 ===========
 ```pascal
+{Cuando buscamos elementos no ordenados en el arbol}
 	procedure buscarMasEdad(a:arbol; var maxE:integer; var maxN:integer);
 	begin
 	   if ( a <> nil ) then begin
@@ -61,4 +63,20 @@ Procedure Máximo Mínimo
 		buscarMasEdad (a^.hi, maxE, maxN);
 		buscarMasEdad (a^.hd, maxE, maxN);
    end;
+```
+Encontrar
+===========
+```pascal
+{Cuando buscamos elementos no ordenados en el arbol}
+procedure encontrar (a:arbol);
+var
+	valor:Integer;
+	function encontrar (a:arbol; v:integer):boolean;
+	begin
+		if (a = nil) then
+			encontrar:=false
+		else if (a^.dato.numero = v) then encontrar:=true
+		else if (a^.dato.numero < v) then encontrar:=encontrar(a^.hd, v)
+		else encontrar:=encontrar(a^.hi, v);
+	end;
 ```
