@@ -1,4 +1,4 @@
-# Algoritmos Utiles:
+# 🖥️Algoritmos Utiles🖥️:
 Este es un repositorio donde pienso guardar todos los algoritmos realizados durante el la carrera, por ahora solo de taller en adelante.
 
 Si ves algún error o tenes alguna duda o sabes como hacer una función que encuentre el máximo de un dato por el que el arbol no esta ordenado mensajeame a:
@@ -20,7 +20,7 @@ Si ves algún error o tenes alguna duda o sabes como hacer una función que encu
 * [Informar Inferior](#Informar-Inferior)
 * [Informar Rango](#Informar-Rango)
 
-# Arboles:
+<h1 align="center">🌲Arboles🌲</h1>
 
 Declaración
 ===========
