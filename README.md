@@ -5,7 +5,7 @@ Este es un repositorio donde pienso guardar todos los algoritmos realizados dura
 1. Arboles (BST)
 * [Declaración](#Declaración)
 * [Inserción](#Inserción)
-* [Función Maximo/Minimo](#Función-Maximo/Minimo)
+* [Función Maximo/Minimo](#Función-Maximo-Minimo)
 
 Declaración
 ===========
@@ -21,7 +21,7 @@ type
 Inserción
 ===========
 ```pascal
-procedure insertar {a}(var A:arbol; n:socio);
+procedure insertar {a}(var A:arbol; n:nodo);
 Begin
   if (A = nil) then
    begin
@@ -33,9 +33,10 @@ Begin
     else crear(A^.HD,n)   
 End;
 ```
-Función Maximo/Minimo
+Función-Maximo-Minimo
 ===========
 ```pascal
+{Cuando el arbol esta ordenado en base a lo que queremos sacar}
 	function conseguirMaximo(a:arbol):integer;
 	begin
 		if (a = nil) then 
