@@ -7,7 +7,7 @@ Si ves algún error o tenes alguna duda o sabes como hacer una función que encu
 
 **Indice:** 
 
-1. Arboles (BST)
+1. Arboles (BST) 🌲
 * [Declaración](#Declaración)
 * [Inserción](#Inserción)
 * [Informar Simple](#Informar-Simple)
