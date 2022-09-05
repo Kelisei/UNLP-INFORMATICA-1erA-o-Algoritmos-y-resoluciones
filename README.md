@@ -10,7 +10,7 @@ Si ves algún error o tenes alguna duda o sabes como hacer una función que encu
 
 1. Arboles (BST) 🌲
 
-* [Declaración](#Declaración);
+* [Declaración](#Declaración)
 * [Inserción](#Inserción)
 * [Informar Simple](#Informar-Simple)
 * [Función Maximo/Minimo Ordenado](#Función-Máximo-Mínimo)
