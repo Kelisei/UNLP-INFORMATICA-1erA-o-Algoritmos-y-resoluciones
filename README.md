@@ -9,11 +9,12 @@ Si ves algún error o tenes alguna duda o sabes como hacer una función que encu
 **Indice:** 
 
 1. Arboles (BST) 🌲
-* [Declaración](#Declaración)
+
+* [Declaración](#Declaración);
 * [Inserción](#Inserción)
 * [Informar Simple](#Informar-Simple)
 * [Función Maximo/Minimo Ordenado](#Función-Máximo-Mínimo)
-*[Función Máximo Minimo Desordenado](#función-máximo-minimo-desordenado)
+* [Función Máximo Minimo Desordenado](#función-máximo-minimo-desordenado)
 * [Procedure Máximo/Mínimo](#Procedure-Máximo-Mínimo)
 * [Encontrar Ordenado](#Encontrar-Ordenado)
 * [Encontrar](#Encontrar)
@@ -21,7 +22,9 @@ Si ves algún error o tenes alguna duda o sabes como hacer una función que encu
 * [Informar Uno](#Informar-Uno)
 * [Informar Inferior](#Informar-Inferior)
 * [Informar Rango](#Informar-Rango)
+
 2. Vectores/Arrays 📰
+
 * [Ordenación por inserción](#Ordenación-por-inserción)
 * [Ordenación por selección](#Ordenación-por-selección)
 * [Insertar Vector](#Insertar-Vector)
