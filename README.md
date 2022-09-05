@@ -13,6 +13,7 @@ Si ves algún error o tenes alguna duda o sabes como hacer una función que encu
 * [Inserción](#Inserción)
 * [Informar Simple](#Informar-Simple)
 * [Función Maximo/Minimo Ordenado](#Función-Máximo-Mínimo)
+*[Función Máximo Minimo Desordenado](#función-máximo-minimo-desordenado)
 * [Procedure Máximo/Mínimo](#Procedure-Máximo-Mínimo)
 * [Encontrar Ordenado](#Encontrar-Ordenado)
 * [Encontrar](#Encontrar)
@@ -78,6 +79,25 @@ Función Máximo Mínimo
 			conseguirMaximo:=a^.dato.numero
 		else conseguirMaximo:=conseguirMaximo(a^.hd);
 	end;
+```
+Función Máximo Minimo Desordenado
+===========
+```pascal
+function m (a:arbol):integer;
+        function max (actual, derecho, izquierdo:integer):integer;
+        begin
+            if (actual > derecho) and (actual > izquierdo)then
+              max:=actual
+            else if (derecho > actual) and (derecho > izquierdo)then
+              max:=derecho
+            else if (izquierdo > derecho) and (izquierdo > actual)then
+              max:=izquierdo;
+        end;
+    begin
+        if (a = nil) then
+            m:=-1
+        else m:=max(a^.dato.dni, m(a^.hi), m(a^.hd));
+    end;
 ```
 Procedure Máximo Mínimo
 ===========
