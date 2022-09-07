@@ -54,8 +54,8 @@ Begin
       A^.dato:= n; A^.HI:= nil; A^.HD:= nil;
    end
    else
-    if (n.numero < A^.dato.numero) then crear(A^.HI,n)
-    else crear(A^.HD,n)   
+    if (n.numero < A^.dato.numero) then insertar(A^.HI,n)
+    else insertar(A^.HD,n)   
 End;
 ```
 Informar Simple
@@ -328,14 +328,14 @@ begin
   pri:=1;
   ult:=dimL;
   medio:=(pri+ult) div 2;
-  while (pri <= ult) and (bus <> vec[medio]) do //mientras no hayamos llegado al final y no hallamos encontrado el objeto 
+  while (pri <= ult) and (bus <> vec[medio]) do
    begin
         if (bus < vec[medio]) then
-            ult:=medio-1 //Si el busqueda esta del lado menor del vector entonces el ultimo tiene que pasarse alli
-        else pri:=medio+1; //Lo mismo con le primero si esta en el lado mayor
-        medio:= (pri+ult) div 2; //Reseteamos el medio
+            ult:=medio-1
+        else pri:=medio+1;
+        medio:= (pri+ult) div 2;
     end;
-    if (pri <= ult) and (bus = vec[medio]) then ok:=True; //Si esta en un posicion posible, y se encontró, entonces le devolvemos verdadero
+    if (pri <= ult) and (bus = vec[medio]) then ok:=True; 
   end;
 end;
 ```
