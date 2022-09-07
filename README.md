@@ -319,12 +319,11 @@ end;
 Busqueda binaria
 ===========
 ```pascal
-procedure busquedaDicotomica (var vector: numeros; dimL: integer; bus:integer; var ok:boolean); //Se pasa el vector como var en caso de tener que hacer algo, lol
+procedure busquedaDicotomica (var vector: numeros; dimL: integer; bus:integer; var ok:boolean);
 var 
     pri, ult, medio: integer;
 begin
-  ok:=false; //Ok chequea si lo encontró
-  //calculamos las posiciones por primera vez
+  ok:=false;
   pri:=1;
   ult:=dimL;
   medio:=(pri+ult) div 2;
