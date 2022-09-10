@@ -28,8 +28,18 @@ Si ves algún error o tenes alguna duda o sabes como hacer una función que encu
 * [Ordenación por inserción](#Ordenación-por-inserción)
 * [Ordenación por selección](#Ordenación-por-selección)
 * [Insertar Vector](#Insertar-Vector)
-* [Dicotómica](#Busqueda-Binaria)
+* [Dicotómica Recursiva](#Busqueda-Binaria)
+* [Eliminar Rango](#Eliminación-de-rango)
 
+3. Listas 🧾
+
+* [Imprimir Orden Inverso](#Imprimir-Inverso)
+* [Merge](#Merge)
+* [Merge Acumulador](#merge-acumulador)
+
+4. Recursivo Random
+
+*[Imprimr Numero Sin guardar](#Imprimir-sin-guardar)
 <h1 align="center">🌲Arboles🌲</h1>
 
 Declaración
@@ -246,6 +256,7 @@ begin
   end;
 end;
 ```
+
 <h1 align="center">📰Vectores/Arrays📰</h1>
 
 Ordenación por Inserción 
@@ -319,22 +330,232 @@ end;
 Busqueda binaria
 ===========
 ```pascal
-procedure busquedaDicotomica (var vector: numeros; dimL: integer; bus:integer; var ok:boolean);
-var 
-    pri, ult, medio: integer;
+Procedure busquedaDicotomica (v: vector; ini,fin: indice; dato:integer; var pos: indice);
 begin
-  ok:=false;
-  pri:=1;
-  ult:=dimL;
-  medio:=(pri+ult) div 2;
-  while (pri <= ult) and (bus <> vec[medio]) do
-   begin
-        if (bus < vec[medio]) then
-            ult:=medio-1
-        else pri:=medio+1;
-        medio:= (pri+ult) div 2;
+	if (ini<=fin) and (dato <> v[pos]) then begin
+		writeln(pos);
+		if (dato < v[pos]) then
+			fin:=pos-1
+		else ini:=pos+1;
+		pos:=(ini+fin) div 2;
+		busquedaDicotomica(v,ini,fin,dato,pos);
+	end;
+	if (pos > 0) and (pos < 101)and(dato = v[pos]) then pos:=pos
+	else pos:=-1;
+end;
+```
+Eliminación de rango
+===========
+```pascal
+procedure eliminar (var arr:arrVentas ; var dimL:integer; num1, num2:integer);
+    function buscarPosInf (arr:arrVentas; dimL, buscado:integer):integer;
+    var
+        pos:integer;
+    begin
+        pos:=1;
+        while (pos <= dimL) and (buscado > arr[pos].codigo) do {Busco el codigo para guardarme su posicion en posInf}
+            pos:= pos + 1;
+
+        if (pos > dimL) then {Si la posicion esta fuera de la dimL asignamos 0 para no buscar la posSup, caso contrario nos guardamos la posicion}
+            buscarPosInf:= 0
+        else
+            buscarPosInf:= pos;
     end;
-    if (pri <= ult) and (bus = vec[medio]) then ok:=True; 
-  end;
+    function buscarPosSup (arr:arrVentas; dimL, buscado, pos:integer):integer;
+    begin
+        while (pos <= dimL) and (buscado >= arr[pos].codigo) do {Busco el codigo para guardarme su posicion en posSup}
+            pos:= pos + 1;
+
+        if (pos > dimL) then    {Si la posicion esta fuera de la dimL asignamos dimL para correr el resto del array, caso contrario restamos 1 a pos para qeudar en la posicion correcta}
+            buscarPosSup:= dimL
+        else
+            buscarPosSup:= pos - 1;
+    end;
+var
+    i, posInf,posSup, salto, aux:integer;
+begin
+    posInf:= buscarPosInf(arr, dimL, num1);
+    if (posInf <> 0) then
+    begin
+        posSup:=buscarPosSup(arr, dimL, num2, posInf);
+        salto:= posSup - posInf + 1;
+        aux:=posInf;
+        writeln(posInf);
+        writeln(posSup);
+        for i:= (posSup + 1) to dimL do
+            arr[aux]:= arr[i];
+        dimL:= dimL - salto;
+        end
+    else
+        writeln('La posicion esta fuera del rango del Vector')
+end;```
+
+<h1 align="center">🧾Listas🧾</h1>
+
+Imprimir inverso
+===========
+```pascal
+procedure impLInv {g} (l:lista; aux:char);
+begin
+	if (l^.letra = '.') then begin {Caso base, podría ser nil el caso base e estar implicito}
+		write('|');
+		write(l^.letra);
+		write('|');
+	end
+	else begin
+		aux:=l^.letra;
+		l:=l^.sig;
+		impLInv(l, aux);
+		write('|');
+		write(aux);
+		write('|');
+	end;
+end;
+```
+Merge
+===========
+```pascal
+procedure b (al:arrLista; var l:lista);
+var
+	min:peliculaGuardada; u:lista;
+	procedure agregarAlFinal(var l:lista; var u:lista; n:peliculaGuardada);
+	var
+		nue:lista;
+	begin
+		new(nue); nue^.dato:=n; nue^.sig:=nil;
+		if (l <> nil) then
+			u^.sig:=nue
+		else l:=nue;
+		u:=nue;
+	end;
+	procedure minimo (var al:arrLista; var min:peliculaGuardada);
+	var
+		posMin, i:integer; 
+	begin
+		writeln('Entro a minimo');
+		posMin:=-1; min.codigo:=9999;
+		for i:= 1 to 8 do
+			if (al[i] <> nil) and (al[i]^.dato.codigo < min.codigo) then begin
+				writeln('i:', i);
+				writeln(al[i]^.dato.codigo);
+				min:=al[i]^.dato;
+				posMin:=i;
+				writeln('*Accediendo ', al[i]^.dato.codigo);
+			end;
+		writeln(posMin);
+		if (posMin <> -1) then begin
+			writeln('Moviendo nodo del indice ', i);
+			al[posMin]:=al[posMin]^.sig;		
+		end;
+		writeln('Saliendo minimo');	
+	end;
+begin
+	l:=nil; u:=nil;
+	writeln('Minimo');
+	minimo(aL, min);
+	while (min.codigo <> 9999) do begin
+		writeln('Agregar');		
+		agregarAlFinal(l, u, min);
+		writeln('Minimo');
+		minimo(aL, min);
+	end;
+end;
+```
+Merge Acumulador
+===========
+```pascal
+procedure incisoB (v:vector; var l:listaB);
+var
+	min:infoGuardar; var u:listaB; actual:infoB;
+	procedure agregarAlFinal(var l:listaB; var u:listaB; n:infoB);
+	var
+		nue:listaB;
+	begin
+		new(nue); nue^.dato:=n; nue^.sig:=nil;
+		if (l <> nil) then
+			u^.sig:=nue
+		else l:=nue;
+		u:=nue;
+		writeln(u^.dato.codigo);
+	end;
+	procedure minimo(var v:vector; var min:infoGuardar);
+	var
+		posMin:integer; i:integer;
+	begin
+		posMin:=-1; min.codigo:=9999;
+		for i:= 1 to dimF do
+			if (v[i] <> nil) and (v[i]^.dato.codigo < min.codigo) then begin
+				min:=v[i]^.dato;
+				posMin:=i;
+			end;
+		if (posMin <> -1) then
+			v[posMin]:=v[posMin]^.sig;
+	end;
+begin
+	l:=nil;
+	writeln('Minimo *debug*'); 
+	minimo(v, min);
+	while(min.codigo <> 9999) do begin
+		writeln('While superior *debug*');
+		actual.codigo:=min.codigo; actual.cant:=0;
+		while(min.codigo <> 9999) and (min.codigo = actual.codigo) do begin
+			actual.cant:=actual.cant+1;
+			writeln('Minimo|Codigo de minimo actual: *debug*', min.codigo); 
+			minimo(v, min);
+		end;
+		agregarAlFinal(l, u, actual);
+	end;
+end;
+```
+
+
+<h1 align="center">🖥️Recursivos Random🖥️</h1>
+
+Imprimir sin guardar
+===========
+```pascal
+procedure desglosamiento (num:integer);
+var
+	aux: integer;
+begin
+	if (num <> 0) then begin
+		aux:=num mod 10;
+		num:= num div 10;
+		desglosamiento(num);
+		write(aux);
+	end;
+end;
+procedure leer (var aux:integer);
+begin
+    readln(aux);
+    while (aux <> 0) do begin
+		desglosamiento(aux);
+		writeln();
+		readln(aux);
+    end;
+end;
+```
+Imprimir sin guardar
+===========
+```pascal
+procedure desglosamiento (num:integer);
+var
+	aux: integer;
+begin
+	if (num <> 0) then begin
+		aux:=num mod 10;
+		num:= num div 10;
+		desglosamiento(num);
+		write(aux);
+	end;
+end;
+procedure leer (var aux:integer);
+begin
+    readln(aux);
+    while (aux <> 0) do begin
+		desglosamiento(aux);
+		writeln();
+		readln(aux);
+    end;
 end;
 ```
