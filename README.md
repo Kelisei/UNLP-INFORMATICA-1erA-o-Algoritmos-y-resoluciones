@@ -33,7 +33,7 @@ Si ves algún error o tenes alguna duda o sabes como hacer una función que encu
 
 3. Listas 🧾
 
-* [Imprimir Orden Inverso](#Imprimir-Inverso)
+* [Imprimir Orden Inverso](#Imprimir-inverso)
 * [Merge](#Merge)
 * [Merge Acumulador](#merge-acumulador)
 
@@ -511,30 +511,6 @@ end;
 
 <h1 align="center">🖥️Recursivos Random🖥️</h1>
 
-Imprimir sin guardar
-===========
-```pascal
-procedure desglosamiento (num:integer);
-var
-	aux: integer;
-begin
-	if (num <> 0) then begin
-		aux:=num mod 10;
-		num:= num div 10;
-		desglosamiento(num);
-		write(aux);
-	end;
-end;
-procedure leer (var aux:integer);
-begin
-    readln(aux);
-    while (aux <> 0) do begin
-		desglosamiento(aux);
-		writeln();
-		readln(aux);
-    end;
-end;
-```
 Imprimir sin guardar
 ===========
 ```pascal
