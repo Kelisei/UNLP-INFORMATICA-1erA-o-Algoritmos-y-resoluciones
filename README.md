@@ -39,7 +39,7 @@ Si ves algún error o tenes alguna duda o sabes como hacer una función que encu
 
 4. Recursivo Random
 
-*[Imprimr Numero Sin guardar](#Imprimir-sin-guardar)
+* [Imprimr Numero Sin guardar](#Imprimir-sin-guardar)
 <h1 align="center">🌲Arboles🌲</h1>
 
 Declaración
