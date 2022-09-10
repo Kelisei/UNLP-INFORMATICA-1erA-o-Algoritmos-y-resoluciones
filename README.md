@@ -388,7 +388,8 @@ begin
         end
     else
         writeln('La posicion esta fuera del rango del Vector')
-end;```
+end;
+```
 
 <h1 align="center">🧾Listas🧾</h1>
 
