@@ -493,7 +493,7 @@ var
 			v[posMin]:=v[posMin]^.sig;
 	end;
 begin
-	l:=nil;
+	l:=nil; u:=nil;
 	writeln('Minimo *debug*'); 
 	minimo(v, min);
 	while(min.codigo <> 9999) do begin
