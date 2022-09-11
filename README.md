@@ -327,7 +327,7 @@ end;
 Busqueda binaria
 ===========
 ```pascal
-procedure busquedaDicotomicaRecursiva (arr: vector ; primero: integer ; ultimo: integer ; dato: integer ; var pos: integer);
+procedure busDicotómica (arr: vector ; primero: integer ; ultimo: integer ; dato: integer ; var pos: integer);
 var
 	medio: integer;
 begin
@@ -339,8 +339,8 @@ begin
 			pos:= medio;
 		else
 			if (dato < arr[medio]) then
-				busquedaDicotomicaRecursiva(arr, primero, (medio - 1), dato, pos)
-			else busquedaDicotomicaRecursiva(arr, (medio + 1), ultimo, dato, pos)
+				busDicotómica(arr, primero, (medio - 1), dato, pos)
+			else busDicotómica(arr, (medio + 1), ultimo, dato, pos)
 	end;
 end;
 ```
