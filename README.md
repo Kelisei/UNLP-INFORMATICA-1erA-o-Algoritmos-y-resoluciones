@@ -335,7 +335,7 @@ begin
 		pos:= -1
 	else begin
 		medio:= (primero + ultimo) div 2;
-		if (dato  arr[medio]) then
+		if (dato = arr[medio]) then
 			pos:= medio;
 		else
 			if (dato < arr[medio]) then
