@@ -327,7 +327,7 @@ end;
 Busqueda binaria
 ===========
 ```pascal
-procedure busquedaDicotomicaRecursiva (arr: array ; primero: integer ; ultimo: integer ; dato: integer ; var pos: integer);
+procedure busquedaDicotomicaRecursiva (arr: vector ; primero: integer ; ultimo: integer ; dato: integer ; var pos: integer);
 var
 	medio: integer;
 begin
