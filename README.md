@@ -330,18 +330,21 @@ end;
 Busqueda binaria
 ===========
 ```pascal
-Procedure busquedaDicotomica (v: vector; ini,fin: indice; dato:integer; var pos: indice);
+procedure busquedaDicotomicaRecursiva (arr: array ; primero: integer ; ultimo: integer ; dato: integer ; var pos: integer);
+var
+	medio: integer;
 begin
-	if (ini<=fin) and (dato <> v[pos]) then begin
-		writeln(pos);
-		if (dato < v[pos]) then
-			fin:=pos-1
-		else ini:=pos+1;
-		pos:=(ini+fin) div 2;
-		busquedaDicotomica(v,ini,fin,dato,pos);
+	if (primero > ultimo) then
+		pos:= -1
+	else begin
+		medio:= (primero + ultimo) div 2;
+		if (dato  arr[medio]) then
+			pos:= medio;
+		else
+			if (dato < arr[medio]) then
+				busquedaDicotomicaRecursiva(arr, primero, (medio - 1), dato, pos)
+			else busquedaDicotomicaRecursiva(arr, (medio + 1), ultimo, dato, pos)
 	end;
-	if (pos > 0) and (pos < 101)and(dato = v[pos]) then pos:=pos
-	else pos:=-1;
 end;
 ```
 Eliminación de rango
