@@ -220,20 +220,17 @@ end;
 Informar Inferior 
 ===========
 ```pascal
-procedure informarInferior(A: arbol; legajo1: integer; legajo2: integer);
+procedure informarInferior(A: arbol; legajo: integer;);
 begin
   if(A <> nil) then begin
-    if(A^.dato.legajo > legajo2) then
-      informarInferior(A^.HI, legajo1, legajo2)
+    if(A^.dato.legajo > legajo) then
+      informarInferior(A^.HI, legajo)
     else
-      if(A^.dato.legajo >= legajo1) then begin
+      if(A^.dato.legajo <= legajo) then begin
         write(a^.dato.legajo,'|');
-        informarInferior(A^.HD, legajo1, legajo2);
-        informarInferior(A^.HI, legajo1, legajo2);
+        informarInferior(A^.HD, legajo);
+        informarInferior(A^.HI, legajo);
       end
-      else
-        informarInferior(A^.HD, legajo1, legajo2); 
-        {Si queremos informar al reves, deberiamos invertir los signos!}
   end;
 end;
 ```
