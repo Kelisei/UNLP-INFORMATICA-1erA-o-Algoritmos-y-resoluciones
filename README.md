@@ -22,7 +22,7 @@ Si ves algún error o tenes alguna duda o sabes como hacer una función que encu
 * [Informar Uno](#Informar-Uno)
 * [Informar Inferior](#Informar-Inferior)
 * [Informar Rango](#Informar-Rango)
-
+* [Encontrar Lista en Arbol](#encontrar-lista-en-arbol)
 2. Vectores/Arrays 📰
 
 * [Ordenación por inserción](#Ordenación-por-inserción)
@@ -252,6 +252,21 @@ begin
         informarRango(A^.HD, legajo1, legajo2);
   end;
 end;
+```
+Encontrar Lista en Arbol
+===========
+```pascal
+	procedure EncontrarCliente (codigo:integer; a:arbol; var l:lista);
+	begin
+		if (a = nil) then
+			l:=nil
+		else begin
+			if(codigo = A^.dato.codigo) then
+				l:=A^.dato.l
+			else if (codigo < A^.dato.codigo) then EncontrarCliente(codigo, A^.HI, l)
+			else EncontrarCliente(codigo, A^.HD, l);
+		end;
+	end;
 ```
 
 <h1 align="center">📰Vectores/Arrays📰</h1>
