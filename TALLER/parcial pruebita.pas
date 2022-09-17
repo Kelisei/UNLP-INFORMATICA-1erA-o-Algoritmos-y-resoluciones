@@ -124,16 +124,6 @@ end;
 procedure incisoB (var l:lista; a :arbol);
 var
 	codigo:Integer;
-	function buscarPedidos (a: arbol; codigo: integer):lista;
-	begin
-	  if (a = nil)
-	  then buscarPedidos:= nil
-	  else if( a^.dato.codigo = codigo)
-		   then buscarPedidos:= a^.dato.l
-		   else if(codigo < a^.dato.codigo )
-				then buscarPedidos:= buscarPedidos (a^.hi, codigo)
-				else buscarPedidos:= buscarPedidos (a^.hd, codigo);
-	end;
 	function EncontrarCliente (codigo:integer; a:arbol):lista;
 	begin
 		if (a = nil) 
@@ -148,7 +138,6 @@ begin
 	l:=nil;
 	writeln('introduzca un codigo cliente para retornar sus compras');
 	readln(codigo);
-	//l:=buscarPedidos(a, codigo);
 	l:=EncontrarCliente(codigo, a);
 end;
 {c ) Realizar un  módulo recursivo que reciba la estructura que retorna el inciso b ) y retorne el monto de la compra con mayor cantidad de productos .}
