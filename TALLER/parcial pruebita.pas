@@ -31,13 +31,6 @@ type
 		hd:arbol;
 		hi:arbol;
 	end;
-	
-	infoLeer = record
-		dia:integer;
-		cant:integer;
-		monto:real;
-		codigo:integer;
-	end;
 procedure incisoA (var a:arbol);
 	procedure agregarAdelante( var l: lista; r: info);
     var  nue:lista;
