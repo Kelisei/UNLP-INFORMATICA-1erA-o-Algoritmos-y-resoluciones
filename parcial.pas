@@ -10,7 +10,6 @@ type
 		datoL:info;
 		sig:lista;
 	end;
-	
 	infoGuardar = record
 		l:lista;
 		codigo:integer;
@@ -20,13 +19,6 @@ type
 		dato:infoGuardar;
 		hd:arbol;
 		hi:arbol;
-	end;
-	
-	infoLeer = record
-		dia:integer;
-		cant:integer;
-		monto:real;
-		codigo:integer;
 	end;
 procedure incisoA (var a:arbol);
 	procedure insertarLista (var l:lista; n:info);
