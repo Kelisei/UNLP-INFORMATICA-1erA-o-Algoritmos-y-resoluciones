@@ -1,0 +1,6 @@
+Un torneo de fútbol tiene registro de los equipos, y los equipos de sus 11 jugadores. Del torneo sabes el nombre, la cantidad de fechas y la cantidad de equipos. De los equipos sabes la cantidad de partidos ganados, puntos obtenidos, nombre. De los jugadores sabes nombre, dni, edad, si son suplentes o titulares, la posición, y si están lesionados. 
+Escribir getters y setters y constructores, se tienen q crear los torneos con lugar para N equipos pero sin equipos, y los equipos con lugar hasta 11 jugadores pero sin jugadores. 
+Implementar un método para agregar un equipo al torneo. 
+Implementar un método para agregar un jugador al equipo. 
+Implementar un método que determine si un equipo puede jugar un torneo internacional, y puede solo si tiene más de 55 puntos y sus jugadores titulares no están lesionados. 
+Hacer un toString con la información del torneo, nombre y fecha, uno por uno los equipos con información de sus jugadores y si pueden o no jugar un torneo internacional
