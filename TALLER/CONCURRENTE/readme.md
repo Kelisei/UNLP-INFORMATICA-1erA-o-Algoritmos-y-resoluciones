@@ -27,7 +27,7 @@
         maxpasos:=pasos
 ```
 
-# Dejar en un lugar de a uno
+# Dejar en un lugar de a uno:
 ```js
     repetir p
       BloquearEsquina(80,80)
@@ -35,4 +35,19 @@
       depositarPapel
       Pos(avI, caI)
       LiberarEsquina(80,80)
+```
+# Quien termino primero:
+```js
+  repetir 2
+    RecibirMensaje(id, *)
+      si(id = 1)
+        RecibirMensaje(pasos, r1)
+      sino
+        si(id = 2)
+          RecibirMensaje(pasos, r2)
+  si(id = 2
+    Informar('gano-1',0)
+  sino
+    Informar('gano-2',0)
+     
 ```
