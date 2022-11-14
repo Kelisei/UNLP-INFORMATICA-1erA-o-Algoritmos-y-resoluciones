@@ -51,3 +51,19 @@
     Informar('gano-2',0)
      
 ```
+# Juntar:
+
+```js
+  proceso juntarf(ES f:numero)
+  comenzar
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+      f:=f+1
+  fin
+  proceso juntarp(ES p:numero)
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+      p:=p+1
+  fin
+```
